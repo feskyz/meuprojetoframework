@@ -23,8 +23,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-//$config['base_url'] = 'http://localhost/Projeto';
-$config['base_url'] = 'http://projetoxxx-com.umbler.net';
+$config['base_url'] = 'http://localhost/Projeto';
+//$config['base_url'] = 'http://projetoxxx-com.umbler.net';
 
 /*
 |--------------------------------------------------------------------------
