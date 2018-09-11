@@ -26,6 +26,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 //$config['base_url'] = 'http://localhost/Projeto';
 $config['base_url'] = 'http://projetoxxx-com.umbler.net';
 
+
 /*
 |--------------------------------------------------------------------------
 | Index File
