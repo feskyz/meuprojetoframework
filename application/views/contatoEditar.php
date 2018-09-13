@@ -22,7 +22,7 @@
             <input class="btn btn-primary" type="submit" value="Salvar"/>
         <?php form_close(); ?>
         <p></p>
-        <a href="<?php echo base_url() . 'home' ; ?>">Voltar</a>
+        <a href="<?php echo base_url() . 'home' ?>">Voltar</a>
          </div>        
     
 

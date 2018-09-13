@@ -23,7 +23,7 @@
     <?php form_close(); ?>
     <p></p>
 
-    <table class="table table-striped">
+    <table id="contato" class="table table-striped">
             <caption>Contatos</caption>
             <thead class="thead-dark"
                 <tr>
@@ -64,3 +64,23 @@ echo base_url() .
 ?>">Voltar</a>
     
 </div>
+    
+<script type="text/javascript">
+    $(document).ready(function() {
+    $('#contato').DataTable({
+        language: {
+                "url": "https://cdn.datatables.net/plug-ins/1.10.12/i18n/Portuguese-Brasil.json"
+            },
+            
+            iDisplayLength: 10,
+              dom: 'Bfrtip',
+    buttons: [
+        'copy',
+        'excel',
+        'print',
+        'pdf'
+    ]
+    
+});
+});
+</script> 
