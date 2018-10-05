@@ -87,6 +87,10 @@
 
     </div>
 
+         <br>
+    <body background="imagem/blue2.png" height="70%" width="100%">
+</body>
+     </br>
 
     <script type="text/javascript">
         $("#btn-lista").click(function () {

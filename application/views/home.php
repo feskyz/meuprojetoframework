@@ -10,11 +10,11 @@
         <h2> Primeiro Cadastro </h2>
 
         <p></p>
-        <a class="btn btn-dark" href="<?php echo base_url() . 
+        <a class="btn btn-primary" href="<?php echo base_url() . 
                                             'contato' ; ?>">Cadastro</a>  
         <p></p>
         <?php if($this->session->userdata('logado')->perfilAcesso=="ADM"){?>
-        <a class="btn btn-primary" href="<?php echo base_url() . 
+        <a class="btn btn-light" href="<?php echo base_url() . 
                                             'funcao' ; ?>">Função</a> 
         <p></p>
         <a class="btn btn-dark" href="<?php echo base_url() . 
@@ -24,5 +24,9 @@
         <a class="btn btn-primary" href="<?php echo base_url() . 
                                             'login/sair' ; ?>">Sair</a> -->
        
+        <br>
+    <body background="imagem/blue2.png" height="70%" width="100%">
+</body>
+     </br>
 
 </div>    
