@@ -2,74 +2,70 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Contato extends CI_Controller {
+class Funcao extends CI_Controller {
 
     function __construct() {
         parent::__construct();
         if (!$this->session->userdata('estou_logado')){
             redirect('login');
+        } else if($this->session->userdata('logado')->perfilAcesso=="USER"){
+            redirect('home');
         }
-        $this->load->model('Contatos_model', 'contatos');
         $this->load->model('Funcao_model', 'funcao');
         //contatos é um alias para o Contatos_model 
     }
 
     public function index() {
         $this->load->view('template/header');
-        $dados['acronico'] = "Meu Projeto Framework";
+        $dados['acronico'] = "Preencha com seus dados";
         $dados['completo'] = "Meu Projeto Framework";
-        $dados['contatos'] = $this->contatos->listar();
         $dados['funcao'] = $this->funcao->listar();
-        $this->load->view('contato', $dados);
+        $this->load->view('funcao', $dados);
         $this->load->view('template/footer');
     }
 
     public function inserir() {
-        $dados['nome'] = $this->input->post('nome');
-        $dados['email'] = $this->input->post('email');
-        $dados['idfuncao'] = $this->input->post('idfuncao');
-        $Result=$this->contatos->inserir($dados);
-        if ($Result == true) {
-            $this->session->set_flashdata('sucesso' , 'msg');
-        redirect('contato');
-    } else { 
-            $this->session->set_flashdata('falha' , 'msg');
-        redirect('contato');
-    }
+            $dados['nomefuncao'] = $this->input->post('nomefuncao');
+        $result = $this->funcao->inserir($dados);
+                 if ($result == true) {
+            $this->session->set_flashdata('sucesso', 'msg');
+        redirect('funcao');
+        } else {
+            $this->session->set_flashdata('falha', 'msg');
+            redirect('funcao');
+        }
     }
 
     public function deletar($id) {
-        $Result=$this->contatos->deletar($id);
+         $Result=$this->funcao->deletar($id);
        if ($Result == true) {
             $this->session->set_flashdata('excluirS' , 'msg');
-        redirect('contato');
+        redirect('funcao');
     } else { 
             $this->session->set_flashdata('excluirF' , 'msg');
-        redirect('contato');
+        redirect('funcao');
     }
     }
+
     public function editar($id) {
+        $this->load->view('template/header');
         $data['acronico'] = "Felipe";
         $data['completo'] = "Felipe Souza";
-        $data['contatoEditar'] = $this->contatos->editar($id);
-        $data['funcao'] = $this->funcao->listar();
-        $this->load->view('template/header');
-        $this->load->view('contatoEditar', $data);
+        $data['funcaoEditar'] = $this->funcao->editar($id);
+        $this->load->view('funcaoEditar', $data);
         $this->load->view('template/footer');
     }
 
     public function atualizar() {
-        $data['id'] = $this->input->post('id');
-        $data['nome'] = $this->input->post('nome');
-        $data['email'] = $this->input->post('email');
         $data['idfuncao'] = $this->input->post('idfuncao');
-        $Result=$this->contatos->atualizar($data);
+        $data['nomefuncao'] = $this->input->post('nomefuncao');
+        $Result=$this->funcao->atualizar($data);
         if ($Result == true) {
             $this->session->set_flashdata('sucessoA' , 'msg');
-        redirect('contato');
+        redirect('funcao');
     } else { 
             $this->session->set_flashdata('falhaA' , 'msg');
-        redirect('contato');
+        redirect('funcao');
     }
     }
 }

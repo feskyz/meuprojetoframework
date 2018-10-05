@@ -11,6 +11,9 @@ class Contatos_model extends CI_Model {
     function listar() {
         $this->db->select('*');
         $this->db->from('contatos');
+        $this->db->join('funcao','funcao.idfuncao = contatos.idfuncao');
+        $this->db->order_by('nomefuncao','ASC');
+        $this->db->order_by('nome','ASC');
         $query = $this->db->get();
         return $query->result();
     }
