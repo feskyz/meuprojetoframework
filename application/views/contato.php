@@ -63,27 +63,30 @@
                                     <td><?php echo $row->nome; ?></td>
                                     <td><?php echo $row->email; ?></td>
                                     <td><?php echo $row->nomefuncao; ?></td>
-                                    <td>
-                                        <a href="<?php
-                                        echo base_url() .
-                                        'contato/editar/' . $row->id;
-                                        ?>">Editar</a>
-                                        |
-                                        <a href="<?php
-                                        echo base_url() . ''
-                                        . 'contato/deletar/' . $row->id;
-                                        ?>">Excluir</a>
-                                    </td>
+                                   <td>
+                            <a class="btn btn-dark" href="<?php
+                            echo base_url() .
+                            'funcao/editar/' . $row->idfuncao;
+                            ?>">Editar</a>
+                            |
+                            <a class="btn btn-light" href="<?php
+                               echo base_url() . ''
+                               . 'funcao/deletar/' . $row->idfuncao;
+                               ?>">Excluir</a>
+                        </td>
                                 </tr>
                             <?php endforeach; ?>
                         <?php endif; ?>
                     </tbody>
                 </table>
             </div>
-        <a href="<?php
-        echo base_url() .
-        'home';
-        ?>">Voltar</a>
+        
+        <a class="btn btn-light"
+           href="<?php echo base_url() .
+ 'home';
+?>">Voltar</a>
+    </div>
+
 
     </div>
 

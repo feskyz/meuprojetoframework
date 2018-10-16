@@ -53,12 +53,12 @@
                     <tr>
                         <td><?php echo $row->nomefuncao; ?></td>
                         <td>
-                            <a class="btn btn-success" href="<?php
+                            <a class="btn btn-success btn-dark" href="<?php
                             echo base_url() .
                             'funcao/editar/' . $row->idfuncao;
                             ?>">Editar</a>
                             |
-                            <a class="btn btn-danger" href="<?php
+                            <a class="btn btn-light" href="<?php
                                echo base_url() . ''
                                . 'funcao/deletar/' . $row->idfuncao;
                                ?>">Excluir</a>
@@ -74,7 +74,10 @@
     </table>
  
     <p></p>
-    <a href="<?php echo base_url() . 'home'; ?>">Voltar</a>
+    <a class="btn btn-primary"
+           href="<?php echo base_url() .
+ 'home';
+?>">Voltar</a>
     </div>
         </div>
    

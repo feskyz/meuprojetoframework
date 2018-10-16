@@ -32,7 +32,7 @@
 
     
     <br>
-    <body background="imagem/blue2.png" height="70%" width="100%">
+    <body background="imagem/sasha.jpg" height="70%" width="100%">
 </body>
      </br>
 

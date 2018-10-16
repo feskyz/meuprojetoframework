@@ -72,12 +72,12 @@
                         <td><?php echo $row->user; ?></td>
                         <td><?php echo $row->perfilAcesso; ?></td>
                         <td>
-                            <a class="btn btn-success" href="<?php
+                            <a class="btn btn-success btn-dark" href="<?php
                             echo base_url() .
                             'usuario/editar/' . $row->idusuario;
                             ?>">Editar</a>
                             |
-                            <a class="btn btn-danger" href="<?php
+                            <a class="btn btn-light" href="<?php
                                echo base_url() . ''
                                . 'usuario/deletar/' . $row->idusuario;
                                ?>">Excluir</a>
@@ -89,7 +89,10 @@
     </table>
  
     <p></p>
-    <a href="<?php echo base_url() . 'home'; ?>">Voltar</a>
+    <a class="btn btn-primary"
+           href="<?php echo base_url() .
+ 'home';
+?>">Voltar</a>
     </div>
         </div>
 
